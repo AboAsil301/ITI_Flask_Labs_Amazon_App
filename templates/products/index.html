@@ -1,0 +1,33 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Products  {% endblock%}
+
+{% block body %}
+<!-- Start Body -->
+  <div class="container">
+    <div class="add-product pt-5 text-end">
+        <a href="{{url_for('products.create')}}" class="fs-4 text-decoration-none " style="color: #5585b5;"><i class="fa-regular fa-square-plus"></i></a>
+    </div>
+    <div class="row row-cols-lg-4 row-cols-md-2 row-cols-1 pt-3 pb-5">
+      {% for product in products %}
+      <div class="card border-0 mb-3 ">
+            {% if product.image %}
+              <img src="{{ url_for('static', filename='products/images/' + product.image) }}" class="card-img-top rounded-3 mb-2" height="370">
+            {% else %}
+              <img src="{{ url_for('static', filename='products/images/placeholder.png') }}" class="card-img-top rounded-3 mb-2" height="370">
+            {% endif %}
+        <div class="card-body text-center p-0 ">
+            <h5 class="card-title">{{product.name}}</h5>
+            <div class="d-flex justify-content-around   ">
+                 <a href="{{url_for('products.show', id=product.id)}}" style="color: #5585b5;"><i class="fa-solid fa-eye"></i></a>
+                <a href="{{url_for('products.edit', id=product.id)}}" style="color: #5585b5;"><i class="fa-regular fa-pen-to-square"></i></a>
+                <a href="{{url_for('products.delete', id=product.id)}}" class="text-danger"><i class="fa-solid fa-trash"></i></a>
+            </div>
+          </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  <!-- End Body -->
+
+{% endblock %}

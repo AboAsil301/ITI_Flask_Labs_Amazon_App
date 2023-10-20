@@ -1,0 +1,41 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Contact Us {% endblock %}
+
+{% block body %}
+<div class="container-fluid ">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-5">
+                <h1>Contact Us</h1>
+                <p>If you have any questions, feedback, or require assistance, please don't hesitate to reach out to us. Our team is here to help you.</p>
+
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-envelope"></i> Email: <a href="mailto:ahmedReda@ITI.iti">ahmedReda@ITI.iti</a></li>
+                    <li><i class="fas fa-phone"></i> Phone: <a href="tel:+201094597301">+20 (109) 459-7301</a></li>
+                </ul>
+            </div>
+                        <div class="col-lg-7">
+                <h2>Send Us Your Feedback</h2>
+                <form action="{{ url_for('contact') }}" method="post">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Your Name</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Your Email</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Your Message</label>
+                        <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

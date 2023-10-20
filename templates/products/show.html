@@ -1,0 +1,57 @@
+{% extends 'layouts/base.html' %}
+{% block title %} Product Details  {% endblock %}
+{% block body %}
+  <!-- Start Body -->
+  <div class="container py-5">
+    <div class="row mb-5">
+      <!-- * Images * -->
+      <div class="col-lg-6 row">
+        <div class="col-4 text-center">
+            {% if product.image %}
+
+          <img src="{{ url_for('static', filename='products/images/'+product.image)}}" class="mb-2" width="96" alt="Product Image">
+          <img src="{{ url_for('static', filename='products/images/'+product.image)}}" class="mb-2" width="96" alt="Product Image">
+          <img src="{{ url_for('static', filename='products/images/'+product.image)}}" class="mb-2" width="96" alt="Product Image">
+{% else %}
+          <img src="{{ url_for('static', filename='products/images/placeholder.png')}}" class="mb-2" width="96" alt="Product Image">
+          <img src="{{ url_for('static', filename='products/images/placeholder.png')}}" class="mb-2" width="96" alt="Product Image">
+          <img src="{{ url_for('static', filename='products/images/placeholder.png')}}" class="mb-2" width="96" alt="Product Image">
+            {% endif %}
+
+        </div>
+        <div class="col-8 main-image h-50 text-lg-start text-center">
+            {% if product.image %}
+                 <img src="{{ url_for('static', filename='products/images/'+product.image)}}" width="300" alt="Product Image">
+            {% else %}
+                 <img src="{{ url_for('static', filename='products/images/placeholder.png')}}" width="300" alt="Product Image">
+            {% endif %}
+        </div>
+      </div>
+      <!--  Details -->
+      <div class="col-lg-6 text-start px-5 mt-lg-0 mt-4">
+        <h1 class="">{{product.name}}</h1>
+        <hr />
+        <div>
+          <h5>Description</h5>
+          <p>{{product.description}}</p>
+        </div>
+        <hr>
+        <p>$ {{product.price}}</p>
+        <hr />
+        {% if product.instock == 0   %}
+          <span class="badge bg-danger p-2">Out Of Stock</span>
+        {% else %}
+          <span class="badge bg-success p-2">In Stock</span>
+        {% endif %}
+        <hr />
+        <div>
+          <p class="bg-light fw-bold p-3" style="width: 280px;">Created At: <small class="fw-normal">{{product.created_at}}</small></p>
+          <p class="bg-light fw-bold p-3" style="width: 280px;">Updated At: <small class="fw-normal">{{product.updated_at}}</small></p>
+        </div>
+        <hr />
+        <a href="{{url_for('products.index')}}" class="btn text-white" style="background-color: #5585b5">	&larr; Go Back To Home</a>
+      </div>
+    </div>
+  </div>
+  <!-- End Body -->
+{% endblock %}

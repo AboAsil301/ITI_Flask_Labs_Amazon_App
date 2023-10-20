@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}  {% endblock%}</title>
-      <link  rel="stylesheet" href="{{url_for('static', filename='bootstrap/css/bootstrap.css')}}">
+    <link  rel="stylesheet" href="{{url_for('static', filename='bootstrap/css/bootstrap.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='fontawesome/css/all.min.css') }}">
+
 
 </head>
 <body>
@@ -16,13 +18,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="{{url_for('products.index')}}">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Contactus</a>
+          <a class="nav-link" href="{{ url_for('contact') }}">Contactus</a>
         </li>
            <li class="nav-item">
-          <a class="nav-link" href="#">Abouts</a>
+          <a class="nav-link" href="{{ url_for('abouts') }}">Abouts</a>
         </li>
 {#        <li class="nav-item dropdown">#}
 {#          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">#}
@@ -61,7 +63,7 @@
       <a
         class="btn text-white btn-floating m-1"
         style="background-color: #3b5998;"
-        href="#!"
+        href="https://www.linkedin.com/in/ahmed-reda301"
         role="button"
         ><i class="fab fa-facebook-f"></i
       ></a>
@@ -70,7 +72,7 @@
       <a
         class="btn text-white btn-floating m-1"
         style="background-color: #55acee;"
-        href="#!"
+        href="https://www.linkedin.com/in/ahmed-reda301"
         role="button"
         ><i class="fab fa-twitter"></i
       ></a>
@@ -79,7 +81,7 @@
       <a
         class="btn text-white btn-floating m-1"
         style="background-color: #dd4b39;"
-        href="#!"
+        href="https://www.linkedin.com/in/ahmed-reda301"
         role="button"
         ><i class="fab fa-google"></i
       ></a>
@@ -88,7 +90,7 @@
       <a
         class="btn text-white btn-floating m-1"
         style="background-color: #ac2bac;"
-        href="#!"
+        href="https://www.linkedin.com/in/ahmed-reda301"
         role="button"
         ><i class="fab fa-instagram"></i
       ></a>
@@ -97,7 +99,7 @@
       <a
         class="btn text-white btn-floating m-1"
         style="background-color: #0082ca;"
-        href="#!"
+        href="https://www.linkedin.com/in/ahmed-reda301"
         role="button"
         ><i class="fab fa-linkedin-in"></i
       ></a>
@@ -105,7 +107,7 @@
       <a
         class="btn text-white btn-floating m-1"
         style="background-color: #333333;"
-        href="#!"
+        href="https://www.linkedin.com/in/ahmed-reda301"
         role="button"
         ><i class="fab fa-github"></i
       ></a>
@@ -116,8 +118,8 @@
 
   <!-- Copyright -->
   <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-    © 2020 Copyright:
-    <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+    © 2023 Copyright:
+    <a class="text-white" href="https://www.linkedin.com/in/ahmed-reda301">AhmedReda@ITI.iti</a>
   </div>
   <!-- Copyright -->
 </footer>
